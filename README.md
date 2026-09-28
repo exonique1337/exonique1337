@@ -63,6 +63,16 @@
 
 ---
 
+## 🎮 Мой Steam
+
+<div align="center">
+
+![Steam](https://steam-widget.com/widget/img?id=76561199351061417&width=900&theme=dark)
+
+</div>
+
+---
+
 ## 📊 GitHub статистика
 
 <div align="center">
