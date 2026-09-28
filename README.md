@@ -15,26 +15,6 @@
 
 ---
 
-```console
-user@xnq666:~$ whoami
-exonique
-
-user@xnq666:~$ ls -la
-total 42
-drwxr-xr-x  5 user user 4096 Apr  1 12:00 .
-drwxr-xr-x  3 root root 4096 Apr  1 11:59 ..
--rw-r--r--  1 user user  220 Apr  1 12:00 README.md
-
-user@xnq666:~$ sudo rm -rf /
-⚠️  Вы уверены? (y/N) y
-Удаление корневой файловой системы...
-Ошибка: недостаточно прав (шутка, всё цело).
-
-user@xnq666:~$ █
-```
-
----
-
 ## 👤 Обо мне
 
 Привет! Я **Exonique** — начинающий разработчик, который любит создавать необычные интерфейсы и экспериментировать с веб-технологиями.
@@ -96,6 +76,30 @@ user@xnq666:~$ █
 <div align="center">
 
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=exonique1337&theme=dark&background=0a0a0a&border=1793d1&stroke=1793d1&ring=1793d1&fire=1793d1&currStreakLabel=1793d1&sideLabels=ebebeb&dates=8a8a8a" />
+
+</div>
+
+---
+
+## 🐍 Мои контрибуции съедает змейка
+
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="dist/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="dist/github-snake.svg" />
+  <img alt="github-snake" src="dist/github-snake.svg" />
+</picture>
+
+</div>
+
+---
+
+## 💬 Цитата дня
+
+<div align="center">
+
+![Quote](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark&quotesUrl=https://gist.githubusercontent.com/exonique1337/6a3be99d61af7b7a54321834d992e616/raw/2dbda9df618c2382331344d2ab897dff5353c010/quotes.json&quoteColor=ebebeb&authorColor=1793d1&backgroundColor=0a0a0a&symbolColor=1793d1)
 
 </div>
 
