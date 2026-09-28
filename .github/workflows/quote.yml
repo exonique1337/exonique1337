@@ -1,0 +1,47 @@
+name: Update Quote
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  update-quote:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Pick random quote and update README
+        run: |
+          QUOTES_URL="https://gist.githubusercontent.com/exonique1337/6a3be99d61af7b7a54321834d992e616/raw/quotes.json"
+          QUOTE=$(curl -s "$QUOTES_URL" | python3 -c "
+import sys, json, random
+data = json.load(sys.stdin)
+q = random.choice(data)
+print(q['quote'] + '|' + q['author'])
+")
+          TEXT=$(echo "$QUOTE" | cut -d'|' -f1)
+          AUTHOR=$(echo "$QUOTE" | cut -d'|' -f2)
+          ENCODED=$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1]))" "$TEXT")
+          ENCODED_AUTHOR=$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1]))" "$AUTHOR")
+          NEW_LINE="![Quote](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark&quote=${ENCODED}&author=${ENCODED_AUTHOR}&quoteColor=ebebeb&authorColor=1793d1&backgroundColor=0a0a0a&symbolColor=1793d1)"
+          python3 -c "
+import re, sys
+path = 'README.md'
+with open(path, 'r', encoding='utf-8') as f:
+    content = f.read()
+pattern = r'!\[Quote\]\(https://quotes-github-readme\.vercel\.app/api\?[^\)]+\)'
+new_content = re.sub(pattern, sys.argv[1], content)
+with open(path, 'w', encoding='utf-8') as f:
+    f.write(new_content)
+" "$NEW_LINE"
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "Update quote" || echo "No changes"
+          git push
