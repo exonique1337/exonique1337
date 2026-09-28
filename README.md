@@ -99,7 +99,7 @@
 
 <div align="center">
 
-![Quote](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark&quotesUrl=https://gist.githubusercontent.com/exonique1337/6a3be99d61af7b7a54321834d992e616/raw/2dbda9df618c2382331344d2ab897dff5353c010/quotes.json&quoteColor=ebebeb&authorColor=1793d1&backgroundColor=0a0a0a&symbolColor=1793d1)
+![Quote](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark&quote=Что-то&author=Exonique&quoteColor=ebebeb&authorColor=1793d1&backgroundColor=0a0a0a&symbolColor=1793d1)
 
 </div>
 
